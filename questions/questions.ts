@@ -14,14 +14,13 @@ type Question = {
     val_two: number | null
 }
 
-"WHO Performance Status Calculator"
 
 export const Questions: Question[] = [
     { question: "Is the patient completely confined to bed or chair?",
         one: AnswerType.Answer, two: AnswerType.Continue, val_one: 4, val_two: null, prompt_one: "Yes", prompt_two: "No" }, // 1
     { question: "Does the patient spend more than 50% of waking hours in bed or chair?",
         one: AnswerType.Continue, two: AnswerType.SkipTo, val_one: null, val_two: 6, prompt_one: "Yes", prompt_two: "No" }, // 2,
-    { question: "While spending > 50% of waking hours in bed or chair, can the patient perform any selfcare?",
+    { question: "Can the patient perform any selfcare?",
         one: AnswerType.Answer, two: AnswerType.Answer, val_one: 3, val_two: 4, prompt_one: "Only limited selfcare", prompt_two: "No selfcare at all" }, // 3
     { question: "Is the patient able to get out of bed/chair and walk independently?",
         one: AnswerType.Continue, two: AnswerType.Answer, val_one: null, val_two: 3, prompt_one: "Yes", prompt_two: "No" }, // 4
