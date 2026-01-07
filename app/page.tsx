@@ -31,55 +31,69 @@ export default function Home() {
 
     return (
         <div className="flex min-h-screen items-center justify-center bg-background px-4">
-            <AnimatePresence mode="wait">
-                <motion.div
-                    key={res !== null ? "result" : idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.25 }}
-                    className="w-full max-w-sm rounded-2xl border bg-card p-6 shadow-lg"
-                >
-                    {res !== null ? (
-                        <div className="flex flex-col items-center gap-4 text-center">
-                            <h2 className="text-base font-medium text-muted-foreground">
-                                WHO Performance Status
-                            </h2>
-                            <div className="text-5xl font-bold">{res}</div>
-                        </div>
-                    ) : (
-                        <div className="flex flex-col items-center gap-6 text-center">
-                            <p className="text-base font-medium leading-relaxed">
-                                {current.question}
-                            </p>
+            <div className="flex w-full max-w-sm flex-col items-center gap-6 text-center">
 
-                            <ButtonGroup className="w-full">
-                                <Button
-                                    className="flex-1 py-6 text-base"
-                                    variant="secondary"
-                                    onClick={() =>
-                                        handleAnswer(current.one, current.val_one)
-                                    }
-                                >
-                                    {current.prompt_one}
-                                </Button>
+                {/* Headings */}
+                <h1 className="text-base font-medium text-muted-foreground">
+                    WHO Performance Status Calculator
+                </h1>
+                <h2 className="text-base font-medium text-muted-foreground">
+                    For use when referring patients with suspected or confirmed pancreatic malignancy, within HUTH and NLAG
+                </h2>
 
-                                <ButtonGroupSeparator />
+                {/* Question / Answer Card */}
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={res !== null ? "result" : idx}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.25 }}
+                        className="w-full rounded-2xl border bg-card p-6 shadow-lg"
+                    >
+                        {res !== null ? (
+                            <div className="flex flex-col items-center gap-4 text-center">
+                                <h2 className="text-base font-medium text-muted-foreground">
+                                    WHO Performance Status
+                                </h2>
+                                <div className="text-5xl font-bold">{res}</div>
+                            </div>
+                        ) : (
+                            <div className="flex flex-col items-center gap-6 text-center">
+                                <p className="text-base font-medium leading-relaxed">
+                                    {current.question}
+                                </p>
 
-                                <Button
-                                    className="flex-1 py-6 text-base"
-                                    variant="secondary"
-                                    onClick={() =>
-                                        handleAnswer(current.two, current.val_two)
-                                    }
-                                >
-                                    {current.prompt_two}
-                                </Button>
-                            </ButtonGroup>
-                        </div>
-                    )}
-                </motion.div>
-            </AnimatePresence>
+                                <ButtonGroup className="w-full">
+                                    <Button
+                                        className="flex-1 py-6 text-base"
+                                        variant="secondary"
+                                        onClick={() =>
+                                            handleAnswer(current.one, current.val_one)
+                                        }
+                                    >
+                                        {current.prompt_one}
+                                    </Button>
+
+                                    <ButtonGroupSeparator />
+
+                                    <Button
+                                        className="flex-1 py-6 text-base"
+                                        variant="secondary"
+                                        onClick={() =>
+                                            handleAnswer(current.two, current.val_two)
+                                        }
+                                    >
+                                        {current.prompt_two}
+                                    </Button>
+                                </ButtonGroup>
+                            </div>
+                        )}
+                    </motion.div>
+                </AnimatePresence>
+
+            </div>
         </div>
-    )
+    );
+
 }

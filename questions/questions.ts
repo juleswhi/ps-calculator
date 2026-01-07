@@ -14,9 +14,9 @@ type Question = {
     val_two: number | null
 }
 
+"WHO Performance Status Calculator"
+
 export const Questions: Question[] = [
-    { question: "Is the patient alive?",
-        one: AnswerType.Continue, two: AnswerType.Answer, val_one: null, val_two: 5, prompt_one: "Yes", prompt_two: "No" }, // 0
     { question: "Is the patient completely confined to bed or chair?",
         one: AnswerType.Answer, two: AnswerType.Continue, val_one: 4, val_two: null, prompt_one: "Yes", prompt_two: "No" }, // 1
     { question: "Does the patient spend more than 50% of waking hours in bed or chair?",
