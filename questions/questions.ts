@@ -30,7 +30,7 @@ export const Questions: Question[] = [
         one: AnswerType.Continue, two: AnswerType.Answer, val_one: null, val_two: 3, prompt_one: "Yes", prompt_two: "No" }, // 6
     { question: "Is the patient able to carry out work activities ( job, household, usual roles )?",
         one: AnswerType.Continue, two: AnswerType.Answer, val_one: null, val_two: 2, prompt_one: "Yes", prompt_two: "No" }, // 7
-    { question: "Is the patient restricted only in physically strenuous activity (e.g., heavy lifting, sports)?",
+    { question: "Is the patient restricted while doing physically strenuous activity (e.g., heavy lifting, sports)?",
         one: AnswerType.Answer, two: AnswerType.Continue, val_one: 1, val_two: null, prompt_one: "Yes", prompt_two: "No" }, // 8
     { question: "Is the patient fully active with no limitations compared to pre-illness status?",
         one: AnswerType.Answer, two: AnswerType.Answer, val_one: 0, val_two: 1, prompt_one: "Yes", prompt_two: "No" } // 9
